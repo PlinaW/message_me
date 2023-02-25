@@ -74,3 +74,4 @@ end
 gem 'slim'
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
+gem "sassc-rails"
