@@ -8,7 +8,7 @@ h2.ui.center.aligned.icon.header
   .twelve.wide.column 
     .ui.fluid.raised.card.chatbox
       .content
-        .ui.small.feed 
+        .ui.feed 
           .event
             .content
               .summary
@@ -39,9 +39,15 @@ h2.ui.center.aligned.icon.header
           .event
             .content
               .summary
-                a
-                  | Christian Rocha
-                |  signed up for the site. 
+                em 
+                  | Christian Rocha:
+                |  Test message!
+      .extra.content
+        form.ui.reply.form
+          .field
+            .ui.fluid.icon.input
+              input[type="text" placeholder="Say something..."]
+              i.bordered.inverted.orange.edit.icon
 
   .four.wide.column 
     .ui.fluid.raised.card.chatbox
