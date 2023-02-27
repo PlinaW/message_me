@@ -1,2 +1,33 @@
-h1 
-  |This is login page
+h3.ui.center.aligned.large.header
+  | Welcome to MessageMe - 
+  em 
+    | a complete Chat App
+
+h3.ui.center.aligned.small.icon.header 
+  i.circular.power.off.red.icon
+  | Log in to continue 
+
+.ui.placeholder.segment
+  .ui.two.column.very.relaxed.stackable.grid 
+    .column 
+      .ui.form 
+        .field
+          label 
+            | Username
+          .ui.left.icon.input 
+            <input type="text" placeholder="Username">
+            i.user.icon
+        .field
+          label
+            | Password 
+          .ui.left.icon.input
+             <input type="password" placeholder="Password">
+             i.lock.icon
+        button.ui.red.submit.button
+          | Login
+    .middle.aligned.column
+      .ui.big.red.button 
+        <i class="signup icon"></i>
+        | Sign Up
+  .ui.vertical.divider
+    | Or

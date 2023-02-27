@@ -11,10 +11,9 @@
         .menu
           a.item
             | Log out
-          a.item
-            | Log in
+          = link_to "Log in", login_path, class: "item"
           a.item
             | Sign up
       .item
         .ui.primary.button
-          | Sign Up
+          | Sign up
