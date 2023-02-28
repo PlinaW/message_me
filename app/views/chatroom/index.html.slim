@@ -9,39 +9,18 @@ h2.ui.center.aligned.icon.header
     .ui.fluid.raised.card.chatbox
       .content
         .ui.feed 
-          .event
-            .content
-              .summary
-                a
-                  | Elliot Fu
-                |  added 
-                a
-                  | Jenny Hess
-                |  as a friend 
-          .event 
-            .content 
-              .summary 
-                a
-                  | Stevie Feliciano
-                |  added 
-                a
-                  | Jenny Hess 
-                |  as a friend
-          .event
-            .content
-              .summary
-                a
-                  | Helen Troy
-                |  added 
-                a
-                  | Christian Rocha
-                |  as a friend 
-          .event
-            .content
-              .summary
-                em 
-                  | Christian Rocha:
-                |  Test message!
+          - @messages.each do |message|
+            .event
+              .content
+                .summary
+                  em
+                    = message.user.username
+                  | : 
+                  = message.body
+
+
+
+
       .extra.content
         form.ui.reply.form
           .field
