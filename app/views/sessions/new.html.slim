@@ -9,22 +9,21 @@ h3.ui.center.aligned.small.icon.header
 
 .ui.placeholder.segment
   .ui.two.column.very.relaxed.stackable.grid 
-    .column 
-      .ui.form 
+    .column
+      = form_with(scope: :session, url: login_path, data: {turbo: false}) do |f|
         .field
-          label 
-            | Username
+          = f.label :username, "Username"
           .ui.left.icon.input 
-            <input type="text" placeholder="Username">
+            = f.text_field :username, placeholder: "Username"
             i.user.icon
-        .field
-          label
-            | Password 
+        .field.bt_mg
+          = f.label :password, "Password"
           .ui.left.icon.input
-             <input type="password" placeholder="Password">
-             i.lock.icon
-        button.ui.red.submit.button
-          | Login
+            = f.password_field :password, placeholder: "Password"
+            i.lock.icon
+        .bt_mg
+          = f.button "Login", class: "ui red submit button"    
+
     .middle.aligned.column
       .ui.big.red.button 
         <i class="signup icon"></i>

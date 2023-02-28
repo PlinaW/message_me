@@ -9,10 +9,12 @@
         |  Account 
         i.dropdown.icon
         .menu
-          a.item
-            | Log out
-          = link_to "Log in", login_path, class: "item"
-          a.item
-            | Sign up
+          - if logged_in?
+            = link_to 'Log out', logout_path, class:"item", data: {turbo_method: :delete}
+          - else 
+            = link_to "Log in", login_path, class: "item"
+            a.item
+              | Sign up
+    - if !logged_in?      
       .item
         = link_to "Log In", login_path, class: "ui primary button"
