@@ -9,14 +9,8 @@ h2.ui.center.aligned.icon.header
     .ui.fluid.raised.card.chatbox
       .content
         .ui.feed 
-          - @messages.each do |message|
-            .event
-              .content
-                .summary
-                  em
-                    = message.user.username
-                  | : 
-                  = message.body
+          = render @messages
+
 
 
 
