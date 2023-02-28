@@ -1,7 +1,7 @@
 .ui.small.inverted.menu
   .ui.container 
-    a.item
-      |  Chatroom
+    a
+      = link_to "Chatroom", root_path, class: "item"
     a.item
       |  Messages 
     .right.menu
@@ -15,5 +15,4 @@
           a.item
             | Sign up
       .item
-        .ui.primary.button
-          | Sign up
+        = link_to "Log In", login_path, class: "ui primary button"
