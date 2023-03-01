@@ -11,16 +11,12 @@ h2.ui.center.aligned.icon.header
         .ui.feed 
           = render @messages
 
-
-
-
-
       .extra.content
-        form.ui.reply.form
+        = form_with(model: @message, url: message_path , data: {turbo: false}, :class => "ui reply form", local: true) do |f|
           .field
             .ui.fluid.icon.input
-              input[type="text" placeholder="Say something..."]
-              i.bordered.inverted.orange.edit.icon
+              = f.text_field :body
+              = f.button '<i class="bordered inverted orange edit icon"></i>'.html_safe
 
   .four.wide.column 
     .ui.fluid.raised.card.chatbox
