@@ -4,15 +4,15 @@ h2.ui.center.aligned.icon.header
 
 
 
-.ui.two.column.grid 
-  .twelve.wide.column 
+.ui.two.column.grid
+  .twelve.wide.column
     .ui.fluid.raised.card.chatbox
-      .content
-        .ui.feed 
+      #messages.content
+        #message-container.ui.feed
           = render @messages
 
       .extra.content
-        = form_with(model: @message, url: message_path , data: {turbo: false}, :class => "ui reply form", local: true) do |f|
+        = form_with(model: @message, :class => "ui reply form", url: message_path) do |f|
           .field
             .ui.fluid.icon.input
               = f.text_field :body

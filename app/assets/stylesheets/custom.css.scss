@@ -7,3 +7,14 @@
 .bt_mg{
   margin-top: 10px;
 }
+
+#messages {
+  height: 15em;
+  overflow: auto;
+}
+
+.input {
+  button {
+    display:none;
+  }
+}

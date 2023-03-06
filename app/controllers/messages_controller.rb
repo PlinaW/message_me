@@ -4,8 +4,8 @@ class MessagesController < ApplicationController
   def create
     message = current_user.messages.build(message_params)
     if message.save
-      redirect_to root_path
-    end
+      ActionCable.server.broadcast("chatroom_channel", {mod_message: message_render(message)})
+      end
   end
 
   private
@@ -14,4 +14,13 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:body)
   end
   
+  def message_render(message)
+    render(partial: 'message', locals: {message: message})
+  end
+
+  #The {message: messsage} part is an argument to the render call, 
+  #it is passing the message variable that's in scope here to the partial itself, 
+  #where it will also be called message.
+  #Without this code, there would be no variable called message available inside the partial.
+
 end
